@@ -710,6 +710,38 @@
       <script src="{{ 'product-model.js' | asset_url }}" defer></script>
     {%- endif -%}
 
+    {% if section.settings.image_zoom == 'lightbox' %}
+      <script src="{{ 'photoswipe.min.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'media-photoswipe.js' | asset_url }}" defer="defer"></script>
+      <link href="{{ 'photoswipe.min.css' | asset_url }}" rel="stylesheet" type="text/css">
+
+      <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+          <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+          </div>
+          <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+              <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+              <button class="pswp__button pswp__button--share" title="Share"></button>
+              <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+              <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            </div>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
     {%- liquid
       if product.selected_or_first_available_variant.featured_media
         assign seo_media = product.selected_or_first_available_variant.featured_media
