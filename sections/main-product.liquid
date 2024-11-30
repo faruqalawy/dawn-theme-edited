@@ -713,8 +713,7 @@
     {% if section.settings.image_zoom == 'lightbox' %}
       <script src="{{ 'photoswipe.min.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'media-photoswipe.js' | asset_url }}" defer="defer"></script>
-      <link href="{{ 'photoswipe.min.css' | asset_url }}" rel="stylesheet" type="text/css">
-
+      {{ 'photoswipe.min.css' | asset_url | stylesheet_tag }}
       <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="pswp__bg"></div>
         <div class="pswp__scroll-wrap">
@@ -725,6 +724,7 @@
           </div>
           <div class="pswp__ui pswp__ui--hidden">
             <div class="pswp__top-bar">
+              <div class="pswp__counter"></div>
               <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
               <button class="pswp__button pswp__button--share" title="Share"></button>
               <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
