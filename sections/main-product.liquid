@@ -39,6 +39,8 @@
     }
   {%- endstyle -%}
 
+  <script src="{{ 'details-modal-gallery.js' | asset_url }}" type="module" defer="defer"></script>
+
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
   {%- if product.quantity_price_breaks_configured? -%}
